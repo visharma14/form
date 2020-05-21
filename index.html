@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    
+    
+    <style>
+        .text-on-pannel {
+            background: #fff none repeat scroll 0 0;
+            height: auto;
+            margin-left: 20px;
+            padding: 3px 5px;
+            position: absolute;
+            margin-top: -47px;
+            border: 1px solid #337ab7;
+            border-radius: 8px;
+        }
+
+        .panel {
+            /* for text on pannel */
+            margin-top: 27px !important;
+        }
+
+        .panel-body {
+            padding-top: 30px !important;
+        }
+
+        .my-card {
+            position: absolute;
+            left: 40%;
+            top: -20px;
+            border-radius: 50%;
+
+        }
+
+        .reveal-if-active {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            font-size: 16px;
+            transform: scale(0.8);
+            transition: 0.5s;
+        }
+
+        .reveal-if-active label {
+            display: block;
+            margin: 0 0 3px 0;
+        }
+
+        .reveal-if-active input[type=text] {
+            width: 100%;
+        }
+
+        input[type="radio"]:checked~.reveal-if-active,
+        input[type="checkbox"]:checked~.reveal-if-active {
+            opacity: 1;
+            max-height: 100px;
+            padding: 10px 20px;
+            transform: scale(1);
+            overflow: visible;
+        }
+        
+        .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  opacity: 0.7;
+  transition: all 0.2s;
+  text-align: center;
+}
+.btn:hover{
+    opacity: 2;
+}
+.btn:focus {
+  box-shadow: none;
+}
+    </style>
+
+</head>
+
+<body>
+    <div class="container body">
+        <div class="main_container">
+            <h3 style="font-weight: 300px;"><center>Registration Form</center></h3>
+            <form>
+                <div class="form-group col-md-6">
+                    <label for="jobtitle">Job Title<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="jobtitle" aria-describedby="job"
+                        placeholder="Job Title">
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selectjobtype">Job Type<span style="color: red;">*</span></label>
+                    <select class="form-control" id="selectjobtype">
+                        <option>selectjobtype</option>
+                        <option>Full Time</option>
+                        <option>Part Time</option>
+                        <option>Contract</option>
+                        <option>Freelance</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selectjobrole">Select Job Role<span style="color: red;">*</span></label>
+                    <select class="form-control" id="selectjobrole">
+                        <option>Select Job Role</option>
+
+                        <option>Accountant</option>
+                        <option>Admin</option>
+                        <option>Agriculture and Dairy</option>
+                        <option>Bartender</option>
+                        <option>Architect</option>
+                        <option>Beauticians / Spa</option>
+                        <option>Bouncer</option>
+                        <option>BPO / Customer care</option>
+                        <option>Caretaker / Nanny</option>
+                        <option>Carpenter</option>
+                        <option>Cashier</option>
+                        <option>Cleaner / Washer</option>
+                        <option>Construction / Laborer</option>
+                        <option>Content Writer</option>
+                        <option>Counsellor</option>
+                        <option>Cook / Chef</option>
+                        <option>Data Analytics</option>
+
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selectjoblocation">Select Job Location<span style="color: red;">*</span></label>
+                    <select class="form-control" id="selectjoblocation">
+
+                        <option value="">Select Job Location</option>
+                        <option value="26" data-state="35">Delhi</option>
+                        <option value="30" data-state="11">Ahmedabad</option>
+                        <option value="49" data-state="12">Gurgaon</option>
+                        <option value="65" data-state="16">Bangalore</option>
+                        <option value="93" data-state="20">Mumbai</option>
+                        <option value="98" data-state="20">Pune</option>
+                        <option value="125" data-state="30">Chennai</option>
+                        <option value="5" data-state="37">Hyderabad</option>
+                        <option value="152" data-state="32">Noida</option>
+                        <option value="160" data-state="34">Kolkata</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="numberforvacancies">Number For Vacancies<span style="color: red;">*</span></label>
+                    <input type="text" class="form-control" id="numberforvacancies"
+                        placeholder="Enter the number of Vacancies">
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="selectjobsalary">Salary (Monthly)<span class="mandotary" style="color: red;">*</span></label>
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <input type="min-salary" class="form-control" placeholder="Min Salary">
+
+                        </div>
+                        <div class="col-md-6">
+                            <input type="max-salary" class="form-control " placeholder="Max Salary">
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="selectjobexperience">Experience<span style="color: red;">*</span></label>
+                    <select class="form-control" id="selectjobexperience">
+                        <option>Select Job Experience</option>
+                        <option>0 YEAR Experience</option>
+                        <option>1-5YEAR Experience</option>
+                        <option>5-ABOVE Experience</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="boot-multiselect-demo">Qualification<span style="color: red;">*</span></label>
+                    <select id="boot-multiselect-demo" class="form-control">
+
+                        <option value="Select Qualification" selected="selected"> Select Qualification</option>
+                        <optgroup label="Web Development">
+
+                            <option value="jQuery">jQuery</option>
+
+                            <option value="Bootstrap">Bootstrap</option>
+
+                            <option value="HTML">HTML</option>
+
+                            <option value="CSS">CSS</option>
+
+                            <option value="Angular">Angular</option>
+
+                        </optgroup>
+                        <optgroup label="Programming Languages">
+
+                            <option value="Java">Java</option>
+
+                            <option value="csharp">C#</option>
+
+                            <option value="Python">Python</option>
+
+                        </optgroup>
+
+                        <optgroup label="Databases">
+
+                            <option value="MySQL">MySQL</option>
+
+                            <option value="Oracle">Oracle</option>
+
+                            <option value="MSSQL">MS SQL Server</option>
+
+                        </optgroup>
+
+                    </select>
+
+
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="form-row">
+                    <div>
+                        <input type="radio" name="choice-dollar" id="choice-dollar">
+                        <label for="choice-dollar">Sure.</label>
+
+                        <div class="reveal-if-active">
+                            <label class="width:25px" for="company">Company</label><br>
+                            <input type="text" id="company" placeholder="Enter the Company Name">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="radio" name="choice-dollar" id="choice-dollar">
+                        <label for="choice-dollar">magazine</label>
+
+                        <div class="reveal-if-active">
+                            <div class="col-md-6">
+                                <label class="form-check-label" for="company2">Consultant Name</label><br>
+                                <input type="text" id="company2" placeholder="Enter the Consultant Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-check-label" for="company2">Hiring For</label><br>
+                                <input type="text" id="company2" placeholder="Enter the Hiring Company Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <input type="radio" name="choice-dollar" id="choice-dollar">
+                        <label for="choice-dollar">storm</label>
+
+                        <div class="reveal-if-active">
+                            <label class="form-check-label" for="company3">Company2</label><br>
+                            <input type="text" id="company3" placeholder="Enter the Company Name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Job Discription<span style="color: red;">*</span></label>
+                    <textarea class="form-control" id="widgEditor" rows="4"></textarea>
+                </div>
+                <div class="clerfix"></div>
+                    <div class="form-group">
+                        <label for="">Add Questionnaires to Job </label>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            Add
+                          </button>
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Add Questionary</h5>
+                                  
+                                  
+                                  
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body" aria-required="true">
+                                    <div class="text-center" style=" font-weight: bold;color: #777777; font-size: medium;">Write the Question from Question Pool </div>
+                                    <br> 
+                                    <div class="text-left" style=" font-weight:bold;color:black;">QUESTION 1</div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1"></label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        
+                                        <select class="form-control">
+                                            <option>Select Answer Type</option>
+                                            <option>Text</option>
+                                            <option>Paragraph Text</option>
+                                           
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultUnchecked" required>
+                    <label class="custom-control-label" for="defaultUnchecked">This Job has work from home
+                        option</label>
+                    <span class="badge badge-pill badge-primary primary">New</span>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Email<span style="color: red;">*</span></label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" aria-required="true">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPassword4">Password<span style="color: red;">*</span></label>
+                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required >
+                    </div>
+                </div>
+                <br>
+                <div class="clearfix"></div>
+                <div class="form-group">
+                <div class="container col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <h3 class="text-on-pannel text-primary"><strong class="text-uppercase">Free Jobs‎ </strong>
+                                
+                            </h3>
+                            <div class="list-block" style="line-height: 3; ">
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">Lower Priority than Premium
+                                    Jobs</i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">Less visibility on site</text></i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">Limited applications: 2 responses</text></i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">flowless work</text></i>
+                            </div>
+                            <br>
+                            <button type="button" class="btn btn-primary btn-rounded" value="select" onclick="focused">Select</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-body">
+                            <h3 class="text-on-pannel text-primary"><strong class="text-uppercase"> Premium Jobs 
+                                </strong></h3>
+                            <div class="list-block"
+                                style="line-height: 3;">
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">More visibility across the sites and in alerts</text></i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">Can access all the responses</text></i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">10X responses than free job</text>
+                                </i><br>
+                                <i class="fa fa-check-circle" aria-hidden="true"><text style="font-family: sans-serif;">higher Priority than Free Jobs</text></i>
+                            </div>
+                            
+                            <br>
+                            <button type="button" class="btn btn-primary btn-rounded shadow-none" value="select" >Select</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+                <div class="clearfix"></div>
+               
+                <div class="form-group">
+                    <a href="#"><button type="button" class="btn btn-block btn-primary "  >Post Job</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
